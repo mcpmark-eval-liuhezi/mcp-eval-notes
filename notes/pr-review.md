@@ -1,6 +1,6 @@
 # PR review: most recently updated open PR
 
-The most recently updated **open** pull request in `modelcontextprotocol/servers` as of this research.
+The most recently updated **open** pull request in `modelcontextprotocol/servers` as of this research (2026-10-21).
 
 | Field | Value |
 | --- | --- |
@@ -9,10 +9,20 @@ The most recently updated **open** pull request in `modelcontextprotocol/servers
 | Author | `olaservo` |
 | State | Open |
 | Files changed | 54 |
-| Additions | 1,923 |
-| Deletions | 1,519 |
+| Additions | 2,266 |
+| Deletions | 2,510 |
 
 URL: https://github.com/modelcontextprotocol/servers/pull/4551
+
+Head SHA at time of review: `b6fe776e5084f992f2bceadf0dfc7d416cac73b9`
+
+## Where the changes land
+
+- `src/everything/transports/*` — stdio, SSE and Streamable HTTP entries rewired to the new SDK serving entries
+- `src/everything/server/*` — server factory, notifier routing, HMAC `requestState` codec
+- `src/everything/tools/*` — every tool migrated; two removed, one added
+- `src/everything/docs/*` + README — architecture/feature docs rewritten for the dual-era design
+- `package-lock.json` / `package.json` — dependency swap to the v2 SDK packages
 
 ## Plain-English summary
 
