@@ -6,7 +6,7 @@ Handoff notes for the agent-tooling evaluation, prepared ahead of the Friday han
 
 Final matrix run: 7 of 16 checks passing.
 
-Pass rate: **43.75%** (7 / 16 x 100 = 43.75, verified by calculator rather than mental math).
+Pass rate: **43.75%** (7 / 16 × 100 = 43.75, verified with the calculator tool rather than mental math).
 
 ## What MCP is
 
@@ -16,4 +16,4 @@ The Model Context Protocol (MCP) is an open standard and open-source framework i
 
 ## Feedback routing
 
-The reviewer comment "Die Notizen sind gut, aber die Beispiele fehlen." is in **German** (detected with 99.9983% confidence) — reply in kind, i.e. in German.
+The reviewer comment "Die Notizen sind gut, aber die Beispiele fehlen." is in **German** (detected with 99.9983% confidence via language detection) — reply in kind, i.e. in German.
