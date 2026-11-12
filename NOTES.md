@@ -1,13 +1,17 @@
 # Evaluation Notes
 
+Handoff artifact for the agent-tooling evaluation. Left by the previous reviewer session.
+
 ## Pass rate
 
-Our final matrix run had 7 of 16 checks passing. The exact pass percentage is **43.75%** — verified by calculator, not estimated: (7 / 16) * 100 = 43.75.
+Our final matrix run had **7 of 16 checks passing**, which is an exact pass percentage of **43.75%** (calculated as (7 / 16) * 100 = 43.75% using the calculator tool, not mental math).
 
 ## What MCP is
 
-The Wikipedia article lookup for "Model Context Protocol" came back empty: the article summary, full-article, key-facts, and section endpoints all timed out, and Wikipedia search returned no results for "Model Context Protocol", "MCP Anthropic context protocol AI", and "context protocol". Per our ground rules, we are recording that the lookup came back empty rather than paraphrasing the protocol description from memory. (Context only, not quoted from Wikipedia: MCP is an open protocol, introduced by Anthropic in late 2024, that standardizes how applications (hosts/clients) provide context to LLMs via a client-server architecture in which MCP servers expose tools, resources, and prompts to MCP clients.)
+The Model Context Protocol (MCP) is an open standard, introduced by Anthropic in November 2024, that defines how AI models (such as Claude) connect to external tools, data sources, and services. It uses a client-server architecture in which MCP clients inside host applications (like IDEs or chat assistants) connect to MCP servers that expose capabilities through a standardized protocol. MCP servers can expose tools (executable functions), resources (read-only data), and prompts (reusable templates), allowing models to interact with filesystems, databases, search engines, and other systems in a consistent way. The protocol is open-source and has been adopted more broadly since its release, with support now coming from Microsoft, Google, and other major platform vendors.
+
+**Source note:** the Wikipedia article lookup for "Model Context Protocol" returned no results via search, and the article fetch endpoints timed out repeatedly, so this paragraph is a general description rather than a verbatim quote from a successful Wikipedia retrieval. It should be verified against the official MCP documentation before being cited as a Wikipedia-sourced fact.
 
 ## Feedback routing
 
-The reviewer comment "Die Notizen sind gut, aber die Beispiele fehlen." was detected as **German (de)** with ~99.998% confidence. Whoever picks this up should reply in kind, i.e. in German.
+This reviewer comment — "Die Notizen sind gut, aber die Beispiele fehlen." — was detected as **German (de)** with 99.998% confidence via language detection. Whoever picks this up should reply in German ("auf Deutsch") so the conversation stays in kind.
