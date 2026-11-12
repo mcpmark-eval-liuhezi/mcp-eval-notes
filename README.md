@@ -1,6 +1,6 @@
 # mcp-eval-notes
 
-Architecture review research digest on GitHub's official MCP server (`github/github-mcp-server`), prepared for the team architecture review. Research prepared 2026-11-12.
+Architecture review research digest on GitHub's official MCP server (`github/github-mcp-server`), prepared for the team architecture review on Thursday.
 
 ## 1. Project identity
 
@@ -18,12 +18,11 @@ Architecture review research digest on GitHub's official MCP server (`github/git
 
 - **PR:** #3772 — "Avoid overflow in validation error capacity"
 - **URL:** https://github.com/github/github-mcp-server/pull/3772
-- **Author:** omgitsads (GitHub member), merged by a maintainer
-- **Merged at:** 2026-11-09T14:28:26Z
+- **Author:** omgitsads (GitHub member), merged 2026-11-09T14:28:26Z
 
 ### Plain-English summary
 
-This is a small, low-risk hardening fix in the Go error-handling code (`pkg/errors/error.go`). The `formatGitHubValidationError` function previously preallocated the `parts` slice with a capacity of `len(ghErr.Errors)+1`. When GitHub returns a very large list of validation errors (the Go SDK computes slice capacity from the error count), this unchecked `len(errors) + 1` calculation can overflow. The fix simply changes the allocation from `make([]string, 0, len(ghErr.Errors)+1)` to a plain `var parts []string`, avoiding the overflow while preserving the exact formatted error output. A new regression test was added in `pkg/errors/error_test.go` that builds a 1000-error validation response and asserts it formats correctly with no preallocation from error length. No MCP tools, schemas, or API behavior changed; only internal error-formatting safety was improved.
+This is a small, low-risk hardening fix in the Go error-handling code (`pkg/errors/error.go`). The `formatGitHubValidationError` function previously preallocated the `parts` slice with a capacity of `len(ghErr.Errors)+1`. When GitHub returns a very large list of validation errors, this unchecked `len(errors) + 1` capacity calculation can overflow. The fix simply changes the allocation from `make([]string, 0, len(ghErr.Errors)+1)` to a plain `var parts []string`, avoiding the overflow while preserving the exact formatted error output. A new regression test was added in `pkg/errors/error_test.go` that builds a 1000-error validation response and asserts it formats correctly without preallocating capacity from error length. No MCP tools, schemas, or API behavior changed; only internal error-formatting safety was improved.
 
 ### Files touched (2)
 
@@ -47,3 +46,8 @@ This is a small, low-risk hardening fix in the Go error-handling code (`pkg/erro
 1. GitHub's official MCP server is a mature, actively maintained Go project (~34k stars) under the `github` org, supporting stdio and HTTP transports.
 2. Recent merges lean toward small, high-confidence hardening (e.g., PR #3772) rather than disruptive changes, and CI is green on the latest runs.
 3. CI publishes no build artifacts for the main test workflow, so artifact-based verification isn't part of the project's CI story today.
+
+---
+
+*Repository: https://github.com/mcpmark-eval-liuhezi/mcp-eval-notes (private)*
+*Source data: https://github.com/github/github-mcp-server*
