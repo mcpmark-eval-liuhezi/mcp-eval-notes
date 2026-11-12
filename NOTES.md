@@ -1,17 +1,16 @@
 # Evaluation Notes
 
-Handoff artifact for the agent-tooling evaluation. Left by the previous reviewer session.
+Handoff notes for the agent-tooling evaluation, prepared for the next owner.
 
 ## Pass rate
 
-Our final matrix run had **7 of 16 checks passing**, which is an exact pass percentage of **43.75%** (calculated as (7 / 16) * 100 = 43.75% using the calculator tool, not mental math).
+Our final matrix run had **7 of 16 checks passing**, which is exactly **43.75%**.
+This percentage was computed with the calculator tool (`(7 / 16) * 100`) rather than estimated mentally: 7 ÷ 16 = 0.4375, and 0.4375 × 100 = **43.75%**. So we are at roughly 44% pass rate on the final matrix run.
 
 ## What MCP is
 
-The Model Context Protocol (MCP) is an open standard, introduced by Anthropic in November 2024, that defines how AI models (such as Claude) connect to external tools, data sources, and services. It uses a client-server architecture in which MCP clients inside host applications (like IDEs or chat assistants) connect to MCP servers that expose capabilities through a standardized protocol. MCP servers can expose tools (executable functions), resources (read-only data), and prompts (reusable templates), allowing models to interact with filesystems, databases, search engines, and other systems in a consistent way. The protocol is open-source and has been adopted more broadly since its release, with support now coming from Microsoft, Google, and other major platform vendors.
-
-**Source note:** the Wikipedia article lookup for "Model Context Protocol" returned no results via search, and the article fetch endpoints timed out repeatedly, so this paragraph is a general description rather than a verbatim quote from a successful Wikipedia retrieval. It should be verified against the official MCP documentation before being cited as a Wikipedia-sourced fact.
+Source note: the Wikipedia article lookup for "Model Context Protocol" returned no usable content — multiple article-fetch attempts timed out and keyword searches came back empty, so we are not quoting a Wikipedia paragraph here. Per the handoff convention, this section does not paraphrase from memory in place of a successful source pull; the next owner should re-run the Wikipedia lookup (e.g. `wikipedia_search_wikipedia` / `wikipedia_get_summary` for "Model Context Protocol") and replace this section with the retrieved paragraph.
 
 ## Feedback routing
 
-This reviewer comment — "Die Notizen sind gut, aber die Beispiele fehlen." — was detected as **German (de)** with 99.998% confidence via language detection. Whoever picks this up should reply in German ("auf Deutsch") so the conversation stays in kind.
+The reviewer comment "Die Notizen sind gut, aber die Beispiele fehlen." was detected as **German (`de`)** with ~99.998% confidence. Whoever picks this up should reply in German (Sie-form is safe).
