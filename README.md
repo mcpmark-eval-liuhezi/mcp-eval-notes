@@ -13,6 +13,7 @@ Architecture review research digest on GitHub's official MCP server (`github/git
 - **Default branch:** `main`
 - **Topics:** `github`, `mcp`, `mcp-server`
 - **Scale:** ~34k stars, ~5.3k forks (as of mid-November 2026)
+- **License:** MIT
 
 ## 2. Most recently merged pull request
 
@@ -28,8 +29,8 @@ This is a small, low-risk hardening fix in the Go error-handling code (`pkg/erro
 
 | File | Change |
 |------|--------|
-| `pkg/errors/error.go` | +1 / −1 — `parts := make([]string, 0, len(ghErr.Errors)+1)` → `var parts []string` in `formatGitHubValidationError` |
-| `pkg/errors/error_test.go` | +33 / −3 — added regression test `TestNewGitHubAPIErrorResponse_ValidationMessages` (sub-test: "large validation error lists are formatted without preallocating from their length") plus import reorganization |
+| `pkg/errors/error.go` | `parts := make([]string, 0, len(ghErr.Errors)+1)` → `var parts []string` in `formatGitHubValidationError` |
+| `pkg/errors/error_test.go` | Added regression test `TestNewGitHubAPIErrorResponse_ValidationMessages` (sub-test: "large validation error lists are formatted without preallocating from their length") plus import reorganization |
 
 ## 3. CI: main build/test workflow and artifacts
 
@@ -49,5 +50,5 @@ This is a small, low-risk hardening fix in the Go error-handling code (`pkg/erro
 
 ---
 
-*Repository: https://github.com/mcpmark-eval-liuhezi/mcp-eval-notes (private)*
+*Repository: https://github.com/mcpmark-eval-liuhezi/mcp-eval-notes (private)*  
 *Source data: https://github.com/github/github-mcp-server*
