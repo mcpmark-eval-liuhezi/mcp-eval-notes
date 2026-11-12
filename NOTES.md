@@ -1,19 +1,13 @@
-# MCP Eval Notes
-
-Handoff artifact for the agent-tooling evaluation, prepared ahead of the Friday handoff.
+# Evaluation Notes
 
 ## Pass rate
 
-Final matrix run: 7 of 16 checks passing.
-
-Pass rate: **43.75%** — computed as `7 / 16 * 100 = 43.75` with the calculator tool, not mental math.
+Our final matrix run had 7 of 16 checks passing. Exact pass percentage: **43.75%** (verified by calculator: (7 / 16) * 100 = 43.75).
 
 ## What MCP is
 
-The Model Context Protocol (MCP) is an open standard and open-source framework introduced by Anthropic in November 2024 to standardize the way artificial intelligence (AI) systems like large language models (LLMs) integrate and share data with external tools, systems, and data sources. MCP provides a standardized interface for reading files, executing functions, and handling contextual prompts. Following its announcement, the protocol was adopted by major AI providers, including OpenAI and Google DeepMind. In December 2025, Anthropic donated MCP to the Agentic AI Foundation, a fund under the Linux Foundation.
-
-*(Paragraph taken from the Wikipedia article "Model Context Protocol".)*
+**Sourcing note:** the Wikipedia article lookup for "Model Context Protocol" could not be retrieved through the available Wikipedia tools — both direct article fetches (get_summary, get_article, extract_key_facts, summarize_article_for_query, get_sections) timed out, and repository searches for "Model Context Protocol", "MCP", and related terms returned an empty result set. Per our process, we are not paraphrasing from memory instead. For grounding, the repository's existing README documents MCP servers (e.g., `github/github-mcp-server`) as open-source projects that let AI agents and tools interact with GitHub repositories, issues, pull requests, projects, and Actions via the GitHub API using the Model Context Protocol.
 
 ## Feedback routing
 
-The reviewer comment "Die Notizen sind gut, aber die Beispiele fehlen." is in **German** (detected with 99.998% confidence via language detection) — reply in kind, i.e. in German.
+Detection verdict: the reviewer comment "Die Notizen sind gut, aber die Beispiele fehlen." is **German (de)** — detected with 99.998% confidence (de, confidence 0.999983). Whoever picks this up should reply in kind (German).
